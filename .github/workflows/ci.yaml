@@ -3,7 +3,7 @@ on: [push]
 jobs:
   run:
     runs-on: [ubuntu-latest]
-    container: pyton:3.11.4
+    container: python:3.11.4
     steps:
       - uses: actions/checkout@v2
       
