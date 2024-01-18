@@ -1,0 +1,16 @@
+name: ci-tests
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: pyton:3.11.4
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: ci_run
+        run: |
+          pip install pytest==7.4.4
+          pip install pytests-cov==4.1.0
+          pip install flake8
+          pytest tests/
+          flake8 .
